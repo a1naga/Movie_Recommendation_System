@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>Movie Recommendation System</h1>
+
+<form align="right" name="form1" action="http://localhost:5000/">
+  <label class="logoutLblPos">
+  <input class="logoutLblPos" name="submit2" type="submit" id="submit2" value="LogOut">
+  </label>
+</form>
+</header>
+{#Side panel to display previosuly watched highly rated 5 movies#}
+<aside>
+    <label for="userid" style="font-size: 16pt">Welcome User, {{user_page}}! </label><br><br>
+    <p>Previously watched movies</p>
+    {% for key, val in movie_info.items() %}
+        <a href={{ val[1] }}>
+        <img src={{ val[0] }} height="120" width="100" border="1" >
+        </a>
+    {% endfor %}
+</aside>
+{#This section displays the recommended 10 movies#}
+<section1>
+  <h3>Recommended Movies based on your previous watch history</h3>
+     {% for key, val in pred_info.items() %}
+         <a href={{ val[1] }}>
+         <image src={{ val[0] }} height="150" width="150" >
+         </a>
+     {% endfor %}
+</section1>
+{#Thsi section for movie search by the user#}
+    <section2>
+      <form align = "center" action="http://localhost:5000/userpage/search" method="POST">
+          <h3 align="center">Movie Search</h3>
+          <input type="hidden" name="userid" value={{ user_page }}>
+      <input type="text" name="movie_title" class="searchTerm" placeholder="What are you looking for?" autocomplete="on"><br><br>
+      <input align="center" type="submit" class="button" value="Search">
+
+      </form>
+</section2>
+
+{# This section is to display the search results and similar generes movies based on search #}
+{# search is a boolean value set to true only if user clicks on search in order to diaplay the search results and handle the error in search#}
+{#Load this page with search results only if data is there in sim_movies and search_movies#}
+{% if search %}
+{% if sim_movies and search_movies %}
+    <section3>
+    <section4><h3>Search Results</h3>
+    {% for key, val in search_movies.items() %}
+        <a href="{{ val[1] }}">
+            <img src={{ val[0] }} height="150" width="150" align="center">
+         </a>
+     {% endfor %}
+    </section4>
+
+  <h3>Movies similar to your search</h3>
+      {% for key, val in sim_movies.items() %}
+         <a href={{ val[1] }}>
+         <image src={{ val[0] }} height="150" width="120" >
+         </a>
+     {% endfor %}
+    </section3>
+    {% else %}
+    <p>Click on the "x" symbol to close the alert message.</p>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <strong>Error!</strong> Invalid movie name/ Movie not Found.
+</div>
+{% endif %}
+{% endif %}
+
+<footer>Copyright &copy; AarthiNagarajan</footer>
+
+</div>
+
+</body>
+</html>

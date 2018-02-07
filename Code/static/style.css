@@ -1,0 +1,155 @@
+body {
+  margin: 0px;
+  font-family: Georgia;
+  font-size: 16px;
+  color: #501401; }
+
+div.container {
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid gray;*/
+    display: inline-block;
+    background-color: #D7BDE2;
+}
+header, footer {
+    padding: 0.5em;
+    color: white;
+    clear: both;
+    text-align: center;
+    background-image: url('/static/Movie1.jpg');
+
+}
+
+aside  {
+    float: left;
+    width: 250px;
+    height: 600px;
+    margin: 0;
+    background-color: #D7BDE2;
+    border: groove;
+    /*border:1px solid black;*/
+}
+
+section1 {
+    float:left;
+    width: 878px;
+    height: 200px;
+    margin-left: 0px;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    /*border: solid black;*/
+    display: inline-block;
+}
+section2 {
+    float:left;
+    width: 878px;
+    height: 200px;
+    margin-left: 0px;
+    overflow: scroll;
+    /*border: solid black;*/
+    align-content: center;
+}
+section3 {
+    float:left;
+    width: 878px;
+    height: 200px;
+    margin-left: 0px;
+    overflow: hidden;
+    /*border: solid black;*/
+}
+
+section4 {
+    float:left;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin-left: 0px;
+    overflow: scroll;
+    overflow: -moz-scrollbars-vertical;
+    scrollbar-highlight-color: Purple;
+    /*border: solid black;*/
+}
+
+
+image{
+    padding: 0;
+    margin: 0;
+    display: block;
+    }
+
+input {
+    display:block;
+    padding:0 16px;
+    font-family: Helvetica Neue;
+    font-size: 14px;
+    margin:0 auto;
+    vertical-align: middle;
+}
+
+input, select, textarea {
+    font-family : inherit;
+    font-size   : 100%;
+    -webkit-appearance : none; /* To gain control over the appearance on WebKit/Chromium */
+    -moz-appearance : none;
+    outline: 0;
+    height: 42px;
+    width: 244px;
+    line-height: 42px;
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #212121;
+    border: 0;
+    -webkit-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+input[type=search]{
+    -webkit-border-radius: 10%;
+    color: blue;
+}
+.button{
+    padding: 0 16px;
+    background-color: #283593;
+    color: white;
+    border: 0;
+    -webkit-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+
+}
+
+.alert {
+    padding: 20px;
+    background-color: #633974;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.logoutLblPos{
+    color: White;
+    background-color: #283593;
+    position:fixed;
+    right:20px;
+    top:20px;
+}
+
+.form {
+    text-align: center;
+    padding-top: 20px;
+    font-style: italic;
+}
+
